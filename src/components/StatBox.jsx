@@ -1,6 +1,7 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import ProgressCircle from "./ProgressCircle";
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 
 const StatBox = ({ title, subtitle, icon, progress, increase }) => {
   const theme = useTheme();
@@ -20,7 +21,8 @@ const StatBox = ({ title, subtitle, icon, progress, increase }) => {
           </Typography>
         </Box>
         <Box>
-          <ProgressCircle progress={progress} />
+          {progress? (<ProgressCircle progress={progress} />) : (<VerifiedUserIcon sx={{ color: colors.greenAccent[600], fontSize: "45px" }} />)}
+          
         </Box>
       </Box>
       <Box display="flex" justifyContent="space-between" mt="2px">
@@ -32,7 +34,7 @@ const StatBox = ({ title, subtitle, icon, progress, increase }) => {
           fontStyle="italic"
           sx={{ color: colors.greenAccent[600] }}
         >
-          {increase}
+          {increase ? increase : "Verified"}
         </Typography>
       </Box>
     </Box>
