@@ -20,19 +20,19 @@ const Bar = () => {
   
             <Box display={"flex"} alignItems = "center" gap = "1rem" fontSize={"1.35rem"}>
               <CheckIcon style = {{color:"lightseagreen"}} />
-              <p>Do Some shit</p>
+              <p>Choose the right platform: Each social media platform has a unique audience and features.</p>
             </Box>
             <Box display={"flex"} alignItems = "center" gap = "1rem" fontSize={"1.35rem"}>
               <CheckIcon style = {{color:"lightseagreen"}} />
-              <p>Do Some shit</p>
+              <p>Respond to comments and messages, and interact with your audience</p>
             </Box>
             <Box display={"flex"} alignItems = "center" gap = "1rem" fontSize={"1.35rem"}>
               <CheckIcon style = {{color:"lightseagreen"}} />
-              <p>Do Some shit</p>
+              <p>Use paid advertising to reach a wider audience and promote your content.</p>
             </Box>
             <Box display={"flex"} alignItems = "center" gap = "1rem" fontSize={"1.35rem"}>
               <CheckIcon style = {{color:"lightseagreen"}} />
-              <p>Do Some shit</p>
+              <p>Consistently produce quality content that resonates with your target audience.</p>
             </Box>
           </Box>
         </Box>

@@ -149,7 +149,7 @@ const Dashboard = () => {
                 fontWeight="bold"
                 color={colors.greenAccent[500]}
               >
-                $59,342.32
+                Rs. 59,342.32
               </Typography>
             </Box>
             <Box>
@@ -223,7 +223,7 @@ const Dashboard = () => {
           p="30px"
         >
           <Typography variant="h5" fontWeight="600">
-            Campaign
+            Vyapaar Score
           </Typography>
           <Box
             display="flex"
