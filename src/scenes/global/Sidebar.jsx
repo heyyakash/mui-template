@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -40,6 +40,13 @@ const Sidebar = () => {
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
+  const location = useLocation()
+  const [bank,setBank] = useState(false)
+  useEffect(()=>{
+    if(location.pathname.includes("bank/")){
+      setBank(true)
+    }
+  },[location])
 
   return (
     <Box
@@ -60,6 +67,7 @@ const Sidebar = () => {
           color: "#6870fa !important",
         },
       }}
+      style = {{display:bank?"none":""}}
     >
       <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape="square">
@@ -119,7 +127,7 @@ const Sidebar = () => {
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
               title="Dashboard"
-              to="/"
+              to="/dashboard/123"
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -134,28 +142,28 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="Social Media Trend"
-              to="/bar"
+              to="/dashboard/bar"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Competetion"
-              to="/pie"
+              to="/dashboard/pie"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Line Chart"
-              to="/line"
+              to="/dashboard/line"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Geography Chart"
-              to="/geography"
+              to="/dashboard/geography"
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -170,21 +178,21 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="Profile Form"
-              to="/form"
+              to="/dashboard/form"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Calendar"
-              to="/calendar"
+              to="/dashboard/calendar"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="FAQ Page"
-              to="/faq"
+              to="/dashboard/faq"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
